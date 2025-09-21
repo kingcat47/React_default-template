@@ -6,20 +6,8 @@
 
 ### degit 사용 (추천)
 ```bash
-npx degit yourusername/react-template my-project
-cd my-project
+npx degit yourusername/react-template .
 npm install
-npm run dev
-```
-
-### Git clone 사용
-```bash
-git clone https://github.com/kingcat47/react-template.git my-project
-cd my-project
-rm -rf .git
-git init
-npm install
-npm run dev
 ```
 
 ## 📦 포함된 기능
