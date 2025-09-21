@@ -5,7 +5,7 @@
 ## 🚀 사용 방법
 
 ### degit 사용
-```
+```bash
 # 1. 먼저 템플릿으로 프로젝트 생성
 npx degit kingcat47/React_default-template .
 
