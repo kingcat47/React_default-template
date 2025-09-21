@@ -6,7 +6,7 @@
 
 ### degit 사용 (추천)
 ```bash
-npx degit kingcat47/react-template .
+npx degit kingcat47/React_default-template .
 npm install
 ```
 
