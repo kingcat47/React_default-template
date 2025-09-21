@@ -4,10 +4,17 @@
 
 ## 🚀 사용 방법
 
-### degit 사용 (추천)
-```bash
+### degit 사용
+# 1. 먼저 템플릿으로 프로젝트 생성
 npx degit kingcat47/React_default-template .
-npm install
+
+# 2. Git 초기화 및 원격 저장소 연결
+rm -rf .git 
+git init
+git remote add origin repo_url
+git add .
+git commit -m "Initial commit from template"
+git push -u origin main
 ```
 
 ## 📦 포함된 기능
