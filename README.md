@@ -6,7 +6,7 @@
 
 ### degit 사용 (추천)
 ```bash
-npx degit yourusername/react-template .
+npx degit kingcat47/react-template .
 npm install
 ```
 
