@@ -5,6 +5,7 @@
 ## 🚀 사용 방법
 
 ### degit 사용
+```
 # 1. 먼저 템플릿으로 프로젝트 생성
 npx degit kingcat47/React_default-template .
 
@@ -15,7 +16,7 @@ git remote add origin repo_url
 git add .
 git commit -m "Initial commit from template"
 git push -u origin main
-
+```
 
 ## 📦 포함된 기능
 
