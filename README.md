@@ -15,7 +15,7 @@ git remote add origin repo_url
 git add .
 git commit -m "Initial commit from template"
 git push -u origin main
-```
+
 
 ## 📦 포함된 기능
 
