@@ -1,4 +1,4 @@
-import React from "react";
+import type { FC, ReactNode, CSSProperties } from "react";
 
 import styles from "./styles.module.scss";
 
@@ -26,7 +26,7 @@ export type FlexJustify = typeof FlexJustify[keyof typeof FlexJustify];
 
 // 공통 Stack props
 interface StackProps {
-  children: React.ReactNode;
+  children: ReactNode;
   align?: FlexAlign;
   justify?: FlexJustify;
   gap?: number;
@@ -34,11 +34,11 @@ interface StackProps {
   fullHeight?: boolean;
   wrap?: boolean;
   className?: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
 }
 
 // HStack 컴포넌트 (가로 배치)
-export const HStack: React.FC<StackProps> = ({
+export const HStack: FC<StackProps> = ({
   children,
   align = FlexAlign.Start,
   justify = FlexJustify.Start,
@@ -82,7 +82,7 @@ export const HStack: React.FC<StackProps> = ({
 };
 
 // VStack 컴포넌트 (세로 배치)
-export const VStack: React.FC<StackProps> = ({
+export const VStack: FC<StackProps> = ({
   children,
   align = FlexAlign.Start,
   justify = FlexJustify.Start,

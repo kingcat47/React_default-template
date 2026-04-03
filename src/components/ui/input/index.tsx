@@ -1,6 +1,6 @@
 import { forwardRef, type InputHTMLAttributes, type ReactNode } from "react";
 
-import s from "./style.module.scss";
+import s from "./styles.module.scss";
 
 export interface InputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "size"> {

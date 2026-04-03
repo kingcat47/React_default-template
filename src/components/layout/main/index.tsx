@@ -1,9 +1,11 @@
-import s from "./style.module.scss";
+import type { ReactNode, CSSProperties } from "react";
+
+import s from "./styles.module.scss";
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
   gap?: number;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
 }
 
 const MainLayout = ({ children, gap, style }: Props) => {

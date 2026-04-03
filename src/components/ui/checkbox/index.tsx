@@ -10,7 +10,7 @@ import {
 } from "react";
 
 import { Typo } from "@/components/ui";
-import s from "./style.module.scss";
+import s from "./styles.module.scss";
 
 export type CheckboxSize = "sm" | "md" | "lg";
 

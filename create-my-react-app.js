@@ -16,7 +16,7 @@ console.log(`🚀 ${projectName} 프로젝트를 생성 중...`);
 
 try {
   // 템플릿 클론
-  execSync(`npx degit yourusername/react-template ${projectName}`, { stdio: 'inherit' });
+  execSync(`npx degit kingcat47/React_default-template ${projectName}`, { stdio: 'inherit' });
   
   // 프로젝트 디렉토리로 이동
   process.chdir(projectName);
