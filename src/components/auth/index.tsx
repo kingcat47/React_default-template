@@ -2,10 +2,24 @@ import { Button, Spacing, Typo } from "@/components/ui";
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import s from "./styles.module.scss";
-//import { useState } from "react";
 
-export default function LoginModal() {
- //const [isKorea, setIsKorea] = useState(true);//한유찬이 로그인 누를때마다 알잘딱 나라 보내준다고함.
+export type SnsProvider = "google" | "kakao" | "naver";
+
+interface LoginModalProps {
+  providers?: SnsProvider[];
+  showPhoneLogin?: boolean;
+}
+
+const providerConfig: Record<
+  SnsProvider,
+  { icon: string; label: string; className: string }
+> = {
+  google: { icon: "/google.svg", label: "구글로 시작하기", className: s.google_button },
+  kakao: { icon: "/kakao.svg", label: "카카오톡으로 시작하기", className: s.kakao_button },
+  naver: { icon: "/naver.svg", label: "네이버로 시작하기", className: s.naver_button },
+};
+
+export default function LoginModal({ providers = ["google", "kakao", "naver"], showPhoneLogin = false }: LoginModalProps) {
   return (
     <>
       <div className={s.container}>
@@ -13,61 +27,34 @@ export default function LoginModal() {
         <Spacing size={12} />
         <div className={s.login_container}>
         </div>
-        <Button
-          size="large"
-          variant="secondary"
-          fullWidth
-          className={s.google_button}
-          leadingIcon={
-            <img
-              src="/google.svg"
-              alt="google"
-              style={{ width: "20px", height: "20px" }}
-            />
-          }
-          onClick={() => console.log("google login")}
-        >
-          구글로 시작하기
-        </Button>
-        {/* {isKorea && ()} */}
-        <Button
-          size="large"
-          variant="secondary"
-          fullWidth
-          className={s.kakao_button}
-          leadingIcon={
-            <img
-              src="/kakao.svg"
-              alt="kakao"
-              style={{ width: "20px", height: "20px" }}
-            />
-          }
-          onClick={() => console.log("kakao login")}
-        >
-          카카오톡으로 시작하기
-        </Button>
-        <Button
-          size="large"
-          variant="secondary"
-          fullWidth
-          className={s.naver_button}
-          leadingIcon={
-            <img
-              src="/naver.svg"
-              alt="naver"
-              style={{ width: "20px", height: "20px" }}
-            />
-          }
-          onClick={() => console.log("naver login")}
-        >
-          네이버로 시작하기
-        </Button>
-        
+        {providers.map((provider) => {
+          const { icon, label, className } = providerConfig[provider];
+          return (
+            <Button
+              key={provider}
+              size="large"
+              variant="secondary"
+              fullWidth
+              className={className}
+              leadingIcon={
+                <img src={icon} alt={provider} style={{ width: "20px", height: "20px" }} />
+              }
+              onClick={() => console.log(`${provider} login`)}
+            >
+              {label}
+            </Button>
+          );
+        })}
+
         </div>
-        <Spacing size={8} />
-        <Link to="/auth/login" className={s.number_container}>
-            <Typo.BodyLarge>전화번호로 시작하기</Typo.BodyLarge> <ChevronRight size={21} />
-        </Link>
+        {showPhoneLogin && (
+          <>
+            <Spacing size={8} />
+            <Link to="/auth/login" className={s.number_container}>
+              <Typo.BodyLarge>전화번호로 시작하기</Typo.BodyLarge> <ChevronRight size={21} />
+            </Link>
+          </>
+        )}
       </>
   );
 }
