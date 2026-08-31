@@ -1,6 +1,5 @@
 import { Home, LayoutGrid, ListVideo, ShoppingCart } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-//조성주 바보야 좀 성공하자
 import { Button } from "@/components/ui";
 import HeaderItem from "@/components/ui/header/header-item";
 

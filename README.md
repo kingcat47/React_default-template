@@ -1,38 +1,39 @@
 # React Template
 
-내가 쓸려고 만든 템플릿임.
+백엔드 개발자가 협업 전 프론트엔드 구조에 익숙해질 수 있도록 만든 템플릿.
 
-## 🚀 사용 방법
+프론트엔드에 익숙하지 않다면 [GUIDE_FOR_BACKEND.md](./GUIDE_FOR_BACKEND.md)를 참고하세요.
 
-### degit 사용
+## 사용 방법
+
 ```bash
-# 1. 먼저 템플릿으로 프로젝트 생성
-npx degit kingcat47/React_default-template .
-
-# 2. Git 초기화 및 원격 저장소 연결
-rm -rf .git 
-git init
-git remote add origin repo_url
-git add .
-git commit -m "Initial commit from template"
-git push -u origin main
+npx degit kingcat47/React_default-template my-project
+cd my-project
+npm install
+npm run dev
 ```
 
-## 📦 포함된 기능
+## 기술 스택
 
-- ⚡ Vite + React + TypeScript
-- 🎨 SCSS Modules
-- 🧩 재사용 가능한 UI 컴포넌트
-- 📁 체계적인 폴더 구조
-- 🔧 ESLint 설정
-- 📱 반응형 디자인
+- Vite 7 + React 19 + TypeScript
+- SCSS Modules
+- react-router-dom v7
+- lucide-react
+- Pretendard
 
-## 🛠️ 컴포넌트
+## 프로젝트 구조
 
-- Button
-- Input
-- Checkbox
-- Typography
-- Stack (HStack, VStack)
-- Header
-- Layout
+```
+src/
+  components/
+    ui/          # 재사용 가능한 UI 컴포넌트 (Button, Input 등)
+    layout/      # 페이지 레이아웃
+    only-page/   # 특정 페이지에서만 쓰는 컴포넌트
+  pages/         # 페이지 컴포넌트
+  hooks/         # 커스텀 훅
+  styles/        # 전역 스타일, 디자인 토큰
+  types/         # 타입 정의
+  utils/         # 유틸리티 함수
+  router.tsx     # 라우트 정의
+  main.tsx       # 앱 진입점
+```
