@@ -7,9 +7,8 @@
 ## 사용 방법
 
 ```bash
-npx degit kingcat47/React_default-template my-project
+npx create-oj-react my-project
 cd my-project
-npm install
 npm run dev
 ```
 
